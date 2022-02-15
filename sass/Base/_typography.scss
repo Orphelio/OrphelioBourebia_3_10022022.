@@ -1,0 +1,18 @@
+h1 {
+    font-family: $tittle-font;
+    font-size: $title-size;
+}
+h2 {
+    font-size: $title-size;
+    font-weight: $title-weight;
+}
+h3 {
+    font-family: $tittle-font;
+}
+body, html {
+    font-family: $text-font;
+}
+ul, a {
+    text-decoration: none;
+    list-style-type: none;
+}

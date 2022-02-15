@@ -1,0 +1,22 @@
+.footer {
+    background-color: $bg-footer;
+
+    h3 {
+        color: white;
+        font-size: 22px;
+        font-weight: 500;
+        padding: 20px 20px 0px 20px;
+    }
+
+    &_list {
+        color: white;
+        padding: 20px;
+        margin: 0 auto;
+    }
+    a {
+        color: white;
+    }
+    i.fas.fa-hands-helping {
+        font-size: 11px;
+    }
+}
