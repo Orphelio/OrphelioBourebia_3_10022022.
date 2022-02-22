@@ -1,3 +1,5 @@
+
+
 .reservation {
     display: flex;
     flex-direction: column  ;
@@ -176,35 +178,3 @@ form.search {
 label.custom-checkbox {
     cursor: pointer;
 }
-
-.loader {
-    position: fixed;
-    height: 100%;
-    width: 100%;
-    left: 0;
-    top: 0;
-    animation: lds-dual-ring 1.2s linear infinite;
-    animation-delay: 1.75s;
-    animation-fill-mode: both;
-    z-index: 1  ;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.lds-dual-ring {
-    display: inline-block;
-    background: blueviolet;
-    border-radius: 50px;
-  }
-  .lds-dual-ring::after {
-    content: " ";
-    display: block;
-    width: 64px;
-    height: 64px;
-    margin: 8px;
-    border-radius: 50%;
-    border: 6px solid #fff;
-    border-color: #fff transparent #fff transparent;
-    animation: lds-dual-ring 1.2s linear infinite;
-  }

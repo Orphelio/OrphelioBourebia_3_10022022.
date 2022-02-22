@@ -42,6 +42,22 @@
       transform: rotate(360deg);
     }
 }
+@keyframes remove-loader {
+  from {
+    opacity: 100%;
+  }
+  to {
+    opacity: 0%;
+  }
+}
+@keyframes appear-content {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
 
 @-webkit-keyframes lds-dual-ring {
   0% {

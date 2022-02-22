@@ -1,0 +1,33 @@
+#loader {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation-name: remove-loader;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+
+}
+
+.app {
+    animation-name: appear-content;
+    animation-duration: 3s;
+}
+
+.lds-dual-ring {
+    display: inline-block;
+    background: linear-gradient(170deg, $color-secondary, $color-primary);
+    border-radius: 50px;
+  }
+  .lds-dual-ring::after {
+    content: " ";
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border-radius: 50%;
+    border: 6px solid red;
+    border-color: $color-tertiary transparent $color-tertiary transparent;
+    animation: lds-dual-ring 1.2s linear infinite;
+  }

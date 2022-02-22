@@ -61,6 +61,42 @@
   }
 }
 
+@-webkit-keyframes remove-loader {
+  from {
+    opacity: 100%;
+  }
+  to {
+    opacity: 0%;
+  }
+}
+
+@keyframes remove-loader {
+  from {
+    opacity: 100%;
+  }
+  to {
+    opacity: 0%;
+  }
+}
+
+@-webkit-keyframes appear-content {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+
+@keyframes appear-content {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+
 @-webkit-keyframes lds-dual-ring {
   0% {
     -webkit-transform: rotate(0deg);
@@ -193,6 +229,52 @@ button.btn--like {
   display: none;
 }
 
+#loader {
+  position: fixed;
+  inset: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-animation-name: remove-loader;
+          animation-name: remove-loader;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.app {
+  -webkit-animation-name: appear-content;
+          animation-name: appear-content;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+}
+
+.lds-dual-ring {
+  display: inline-block;
+  background: linear-gradient(170deg, #ff79da, #9356dc);
+  border-radius: 50px;
+}
+
+.lds-dual-ring::after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid red;
+  border-color: #99e2d0 transparent #99e2d0 transparent;
+  -webkit-animation: lds-dual-ring 1.2s linear infinite;
+          animation: lds-dual-ring 1.2s linear infinite;
+}
+
 .header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -238,14 +320,20 @@ button.btn--like {
   color: white;
   padding: 20px;
   margin: 0 auto;
+  line-height: 1.7;
 }
 
 .footer a {
   color: white;
 }
 
+.footer i.fas.fa-utensils {
+  margin-right: 7px;
+}
+
 .footer i.fas.fa-hands-helping {
   font-size: 11px;
+  margin-right: 7px;
 }
 
 .reservation {
@@ -525,49 +613,6 @@ form.search {
 
 label.custom-checkbox {
   cursor: pointer;
-}
-
-.loader {
-  position: fixed;
-  height: 100%;
-  width: 100%;
-  left: 0;
-  top: 0;
-  -webkit-animation: lds-dual-ring 1.2s linear infinite;
-          animation: lds-dual-ring 1.2s linear infinite;
-  -webkit-animation-delay: 1.75s;
-          animation-delay: 1.75s;
-  -webkit-animation-fill-mode: both;
-          animation-fill-mode: both;
-  z-index: 1;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.lds-dual-ring {
-  display: inline-block;
-  background: blueviolet;
-  border-radius: 50px;
-}
-
-.lds-dual-ring::after {
-  content: " ";
-  display: block;
-  width: 64px;
-  height: 64px;
-  margin: 8px;
-  border-radius: 50%;
-  border: 6px solid #fff;
-  border-color: #fff transparent #fff transparent;
-  -webkit-animation: lds-dual-ring 1.2s linear infinite;
-          animation: lds-dual-ring 1.2s linear infinite;
 }
 
 .header {
