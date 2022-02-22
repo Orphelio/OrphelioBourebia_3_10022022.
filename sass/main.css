@@ -442,7 +442,7 @@ form.search {
           align-items: flex-start;
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 990px) {
   .restau .restau_grid {
     -ms-grid-columns: (1fr)[2];
         grid-template-columns: repeat(2, 1fr);
