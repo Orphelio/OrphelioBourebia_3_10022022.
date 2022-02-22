@@ -2,10 +2,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
     padding: 1rem;
-    &--arrow {
+    a {
         position: absolute;
-        left: 10%;
+        top: 50%;
+        transform: translateY(-40%);
+        left: 3%;
+    }
+    &--arrow {
+        display: flex;
         color: black;
         font-size: 20px;
     }

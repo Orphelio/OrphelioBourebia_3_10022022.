@@ -1,6 +1,114 @@
 /** Fonts **/
 /** Colors **/
 /**Shdw + Hovers **/
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: rotate(-360deg);
+            transform: rotate(-360deg);
+  }
+  100% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+}
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate(-360deg);
+            transform: rotate(-360deg);
+  }
+  100% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+}
+
+@-webkit-keyframes pop {
+  0% {
+    -webkit-transform: translate(0, 20px);
+    transform: translate(0, 20px);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes pop {
+  0% {
+    -webkit-transform: translate(0, 20px);
+    transform: translate(0, 20px);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes lds-dual-ring {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes lds-dual-ring {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  90% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+}
+
+@-webkit-keyframes tourne {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  90% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+}
+
+@keyframes tourne {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  90% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+}
+
 h1 {
   font-family: "Shrikhand", "sans-serif";
   font-size: 1.5rem;
@@ -9,6 +117,7 @@ h1 {
 h2 {
   font-size: 1.5rem;
   font-weight: 900;
+  margin-bottom: 24px;
 }
 
 h3 {
@@ -37,7 +146,7 @@ ul, a {
 }
 
 button.btn {
-  background: linear-gradient(50deg, #ff79da, #9356dc);
+  background: linear-gradient(170deg, #ff79da, #9356dc);
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -47,14 +156,41 @@ button.btn {
   height: 45px;
   width: 200px;
   border: none;
+  outline: none;
   border-radius: 30px;
+  -webkit-box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
   color: white;
+  cursor: pointer;
+}
+
+button.btn:hover {
+  -webkit-box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+          box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  -webkit-transform: translateY(-7px);
+          transform: translateY(-7px);
 }
 
 button.btn--like {
   border: none;
   background: none;
   font-size: 25px;
+}
+
+.custom-checkbox input[type="checkbox"],
+.custom-checkbox .checked {
+  display: none;
+  color: #9356dc;
+}
+
+.custom-checkbox input[type="checkbox"]:checked ~ .checked {
+  display: inline-block;
+}
+
+.custom-checkbox input[type="checkbox"]:checked ~ .unchecked {
+  display: none;
 }
 
 .header {
@@ -67,12 +203,22 @@ button.btn--like {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: relative;
   padding: 1rem;
 }
 
-.header--arrow {
+.header a {
   position: absolute;
-  left: 10%;
+  top: 50%;
+  -webkit-transform: translateY(-40%);
+          transform: translateY(-40%);
+  left: 3%;
+}
+
+.header--arrow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   color: black;
   font-size: 20px;
 }
@@ -136,6 +282,7 @@ form.search {
   border: none;
   background-color: #e5e5e5;
   height: 50px;
+  width: 130px;
   font-weight: 500;
   margin: 4px;
 }
@@ -157,21 +304,21 @@ form.search {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 20px 0 25px 0;
+  padding: 35px 0 25px 0;
 }
 
 .explore--title {
   text-align: center;
   -ms-flex-line-pack: center;
       align-content: center;
-  margin: 20px 70px;
+  margin: 0px 70px;
 }
 
 .explore--txt {
   text-align: center;
   -ms-flex-line-pack: center;
       align-content: center;
-  margin: 0 40px 15px;
+  margin: 0 40px 25px;
 }
 
 .howto {
@@ -179,30 +326,52 @@ form.search {
 }
 
 .howto .howto_grid {
-  display: -ms-grid;
-  display: grid;
-  gap: 10px;
-}
-
-.howto .howto_grid_btn {
-  border-radius: 15px;
-  background-color: #f5f5f5;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 40px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+  gap: 24px;
+}
+
+@media (min-width: 1280px) {
+  .howto .howto_grid {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.howto .howto_grid_btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 15px;
+  background-color: #f5f5f5;
+  height: 40px;
   width: auto;
-  padding: 10px 10px 0 0;
+  padding: 16px;
 }
 
 .howto .howto_grid_btn span {
   background-color: #9356dc;
+  color: white;
   border-radius: 50%;
   height: 25px;
   width: 25px;
+  position: absolute;
+  left: calc(-25px/2);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -212,12 +381,33 @@ form.search {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  position: relative;
-  left: -15px;
 }
 
 .howto .howto_grid_btn i {
   color: gray;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 40px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  -webkit-transform: translateX(-115px);
+          transform: translateX(-115px);
+  font-size: 20px;
+}
+
+.howto .howto_grid_btn--txt {
+  font-weight: 700;
+}
+
+.howto .howto_grid_btn:hover {
+  background-color: #eee9f5;
+}
+
+.howto .howto_grid_btn:hover i {
+  color: #9356dc;
 }
 
 .restau {
@@ -229,7 +419,7 @@ form.search {
       -ms-flex-direction: column;
           flex-direction: column;
   background-color: #f5f5f5;
-  padding: 20px;
+  padding: 48px 24px;
 }
 
 .restau_title {
@@ -243,24 +433,29 @@ form.search {
   display: grid;
   -ms-grid-columns: (minmax(300px, 1fr))[auto-fit];
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-gap: 10px;
+  grid-gap: 20px;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  /** responsive desktop : 
+}
+
+@media (min-width: 1280px) {
+  .restau .restau_grid {
+    -ms-grid-columns: (1fr)[2];
         grid-template-columns: repeat(2, 1fr);
-        **/
+  }
 }
 
 .restau .restau_card {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-shadow: 1px 1px 3px 3px #e8e8e8;
-          box-shadow: 1px 1px 3px 3px #e8e8e8;
+  position: relative;
+  -webkit-box-shadow: 1px 1px 3px 3px #c4c4c4;
+          box-shadow: 1px 1px 3px 3px #c4c4c4;
   border-radius: 30px;
   background-color: white;
   -webkit-box-orient: vertical;
@@ -271,6 +466,8 @@ form.search {
 }
 
 .restau .restau_card:hover {
+  -webkit-box-shadow: 0 10px 30px #959595;
+          box-shadow: 0 10px 30px #959595;
   -webkit-box-shadow: 0 10px 30px rgba(3, 0, 0, 0.15), 0 5px 5px rgba(0, 0, 0, 0.1);
           box-shadow: 0 10px 30px rgba(3, 0, 0, 0.15), 0 5px 5px rgba(0, 0, 0, 0.1);
 }
@@ -284,8 +481,31 @@ form.search {
      object-fit: cover;
 }
 
+.restau .restau_card--new {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  background-color: #99e2d0;
+  color: #1c7660;
+  padding: 5px;
+  border-radius: 5px;
+}
+
 .restau .restau_card--info {
   padding: 10px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.restau .restau_card--txt {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 }
 
 .restau .restau_card--title {
@@ -298,6 +518,59 @@ form.search {
 
 .restau .restau_card--like {
   font-size: 25px;
+  color: black;
+  cursor: pointer;
+}
+
+label.custom-checkbox {
+  cursor: pointer;
+}
+
+.loader {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  -webkit-animation: lds-dual-ring 1.2s linear infinite;
+          animation: lds-dual-ring 1.2s linear infinite;
+  -webkit-animation-delay: 1.75s;
+          animation-delay: 1.75s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  z-index: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.lds-dual-ring {
+  display: inline-block;
+  background: blueviolet;
+  border-radius: 50px;
+}
+
+.lds-dual-ring::after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid #fff;
+  border-color: #fff transparent #fff transparent;
+  -webkit-animation: lds-dual-ring 1.2s linear infinite;
+          animation: lds-dual-ring 1.2s linear infinite;
+}
+
+.header {
+  position: relative;
 }
 
 img.menu_img--img {
@@ -339,11 +612,95 @@ img.menu_img--img {
   -webkit-box-pack: right;
       -ms-flex-pack: right;
           justify-content: right;
+  font-size: 25px;
+}
+
+.menu--grid {
+  display: -ms-grid;
+  display: grid;
+  padding-top: 15px;
+}
+
+@media (min-width: 1280px) {
+  .menu--grid {
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+    -webkit-column-gap: 1rem;
+            column-gap: 1rem;
+  }
+}
+
+.menu_section {
+  display: -ms-grid;
+  display: grid;
+}
+
+.menu_section--title {
+  position: relative;
+  padding: 20px 0px 5px 0px;
+  margin-bottom: 15px;
+}
+
+.menu_section--title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 2.5rem;
+  height: 0.25rem;
+  background-color: #99e2d0;
+}
+
+.menu_section :nth-child(2) {
+  -webkit-animation-delay: 200ms;
+  animation-delay: 200ms;
+}
+
+.menu_section :nth-child(3) {
+  -webkit-animation-delay: 400ms;
+  animation-delay: 400ms;
+}
+
+.menu_section :nth-child(4) {
+  -webkit-animation-delay: 600ms;
+  animation-delay: 600ms;
+}
+
+.menu_section :nth-child(5) {
+  -webkit-animation-delay: 800ms;
+  animation-delay: 800ms;
+}
+
+.card--hover {
+  position: absolute;
+  background-color: #99e2d0;
+  height: 74px;
+  width: 55px;
+  right: 0;
+  border-radius: 0px 10px 10px 0px;
+  -webkit-transform: translateX(60px);
+          transform: translateX(60px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-transition: 0.4s linear;
+  transition: 0.4s linear;
+}
+
+.check_circle {
+  color: white;
+  font-size: 20px;
 }
 
 .card {
   display: -ms-grid;
   display: grid;
+  position: relative;
   -ms-grid-columns: 7fr 1fr;
       grid-template-columns: 7fr 1fr;
   -ms-grid-rows: 1fr 1fr;
@@ -356,9 +713,31 @@ img.menu_img--img {
   margin-bottom: 15px;
   overflow: hidden;
   cursor: pointer;
+  -webkit-animation: pop 0.4s linear forwards;
+  animation: pop 0.4s linear forwards;
+  opacity: 0;
+}
+
+.card:hover .card--hover {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  -webkit-transition: 0.4s linear;
+  transition: 0.4s linear;
+}
+
+.card:hover .check_circle {
+  -webkit-animation: rotate 0.4s linear;
+  animation: rotate 0.4s linear;
+}
+
+.card:hover .card--price {
+  padding-right: 60px;
+  -webkit-transition: 0.4s linear;
+  transition: 0.4s linear;
 }
 
 .card--title {
+  width: calc(100% - 60px);
   font-weight: 700;
   font-size: 18px;
   overflow: hidden;
