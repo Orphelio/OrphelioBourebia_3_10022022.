@@ -145,9 +145,10 @@
   }
 }
 
-h1 {
+h1, h5 {
   font-family: "Shrikhand", "sans-serif";
   font-size: 28px;
+  margin: 0;
 }
 
 h2 {
@@ -167,18 +168,6 @@ body, html {
 ul, a {
   text-decoration: none;
   list-style-type: none;
-}
-
-.box_btn {
-  position: relative;
-  padding: 15px;
-  background: white;
-  border-radius: 15px;
-  -webkit-box-shadow: 1px 2px 8px 2px #c4c4c4;
-          box-shadow: 1px 2px 8px 2px #c4c4c4;
-  margin-bottom: 15px;
-  overflow: hidden;
-  cursor: pointer;
 }
 
 button.btn {
@@ -209,16 +198,44 @@ button.btn:hover {
           transform: translateY(-7px);
 }
 
+.order {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 20px 0px 30px 0px;
+}
+
+@media (min-width: 1280px) {
+  .order {
+    -ms-grid-column: 2;
+    grid-column: 2;
+  }
+}
+
 button.btn--like {
   border: none;
   background: none;
   font-size: 25px;
 }
 
+i.fas.fa-heart {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background: linear-gradient(170deg, #ff79da, #9356dc);
+}
+
 .custom-checkbox input[type="checkbox"],
 .custom-checkbox .checked {
   display: none;
-  color: #9356dc;
 }
 
 .custom-checkbox input[type="checkbox"]:checked ~ .checked {
@@ -336,6 +353,14 @@ button.btn--like {
   margin-right: 7px;
 }
 
+body {
+  max-width: 1199.98px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0 auto;
+}
+
 .reservation {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -429,7 +454,7 @@ form.search {
   .howto .howto_grid {
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: (1fr)[3];
+    -ms-grid-columns: repeat(3, 1fr);
         grid-template-columns: repeat(3, 1fr);
   }
 }
@@ -519,7 +544,7 @@ form.search {
 .restau .restau_grid {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(300px, 1fr))[auto-fit];
+  -ms-grid-columns: repeat(auto-fit, minmax(300px, 1fr));
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: 20px;
   -webkit-box-flex: 1;
@@ -532,7 +557,7 @@ form.search {
 
 @media (min-width: 990px) {
   .restau .restau_grid {
-    -ms-grid-columns: (1fr)[2];
+    -ms-grid-columns: repeat(2, 1fr);
         grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -615,6 +640,14 @@ label.custom-checkbox {
   cursor: pointer;
 }
 
+body {
+  max-width: 1199.98px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0 auto;
+}
+
 .header {
   position: relative;
 }
@@ -670,7 +703,7 @@ img.menu_img--img {
 
 @media (min-width: 1280px) {
   .menu--grid {
-    -ms-grid-columns: (1fr)[3];
+    -ms-grid-columns: repeat(3, 1fr);
         grid-template-columns: repeat(3, 1fr);
     -webkit-column-gap: 1rem;
             column-gap: 1rem;
@@ -810,20 +843,5 @@ img.menu_img--img {
       -ms-flex-pack: end;
           justify-content: flex-end;
   font-weight: bold;
-}
-
-.order {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin: 20px 0px 30px 0px;
 }
 /*# sourceMappingURL=main.css.map */

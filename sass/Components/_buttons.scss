@@ -1,14 +1,3 @@
-.box_btn {
-    position: relative;
-    padding: 15px;
-    background: white;
-    border-radius: 15px;
-    box-shadow: 1px 2px 8px 2px $shadow;
-    margin-bottom: 15px;
-    overflow: hidden;
-    cursor: pointer;
-    }
-
 button.btn {
     background: linear-gradient(170deg, $color-secondary, $color-primary);
     align-items: center;
@@ -28,7 +17,16 @@ button.btn {
     }
 
 }
-
+.order {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    margin: 20px 0px 30px 0px;
+    @media (min-width: 1280px) {
+        grid-column: 2;
+      }
+}
 button.btn--like {
     border: none;
     background: none;
