@@ -227,9 +227,11 @@ button.btn--like {
 }
 
 i.fas.fa-heart {
-  -webkit-background-clip: text;
-  color: transparent;
   background: linear-gradient(170deg, #ff79da, #9356dc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  background-clip: text;
 }
 
 .custom-checkbox input[type="checkbox"],
@@ -710,8 +712,13 @@ img.menu_img--img {
 }
 
 .menu_section {
-  display: -ms-grid;
-  display: grid;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .menu_section--title {

@@ -1,7 +1,9 @@
 i.fas.fa-heart {
-    -webkit-background-clip: text;
-    color: transparent;
     background: linear-gradient(170deg, $color-secondary, $color-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    background-clip: text;
 }
 
 .custom-checkbox input[type="checkbox"],

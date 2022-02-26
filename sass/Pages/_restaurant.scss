@@ -43,7 +43,8 @@ img.menu_img--img {
 }
 
 .menu_section {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     &--title {
         position: relative;
         padding: 20px 0px 5px 0px;
